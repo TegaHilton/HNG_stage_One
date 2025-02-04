@@ -14,8 +14,8 @@ function initGame() {
   document.querySelector('[data-testid="colorBox"]').style.backgroundColor =
     targetColor;
   const gameStatus = document.querySelector('[data-testid="gameStatus"]');
-  gameStatus.textContent = ""; // Clear status
-  gameStatus.classList.remove("correct", "wrong", "show"); // Reset classes
+  gameStatus.textContent = "";
+  gameStatus.classList.remove("correct", "wrong", "show");
   document.querySelector(
     '[data-testid="score"]'
   ).textContent = `Score: ${score}`;
@@ -32,21 +32,21 @@ function checkGuess(guessedColor, clickedOption) {
   const gameStatus = document.querySelector('[data-testid="gameStatus"]');
   if (guessedColor === targetColor) {
     gameStatus.textContent = "Correct!";
-    gameStatus.classList.add("correct", "show"); // Apply correct styling and show
-    clickedOption.classList.add("correct"); // Highlight the correct option
+    gameStatus.classList.add("correct", "show");
+    clickedOption.classList.add("correct");
     score++;
     document.querySelector(
       '[data-testid="score"]'
     ).textContent = `Score: ${score}`;
     setTimeout(() => {
-      initGame(); // Start a new round after a short delay
-    }, 1500); // Delay to allow animation
+      initGame();
+    }, 1500);
   } else {
     gameStatus.textContent = "Wrong! Try again.";
-    gameStatus.classList.add("wrong", "show"); // Apply wrong styling and show
+    gameStatus.classList.add("wrong", "show");
     setTimeout(() => {
-      gameStatus.classList.remove("show"); // Remove show class to hide after fade-out
-    }, 1000); // Duration of fade-out animation
+      gameStatus.classList.remove("show");
+    }, 1000);
   }
 }
 
