@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #222;
+  color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.game-container {
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+.color-box {
+  width: 100%;
+  height: 100px;
+  margin: 10px 0;
+  border: 3px solid #555;
+  border-radius: 5px;
+}
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.color-option {
+  height: 60px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.color-option.correct {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+}
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.game-status {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.game-status.show {
+  opacity: 1;
+}
+.game-status.correct {
+  color: green;
+}
+.game-status.wrong {
+  color: red;
+}
